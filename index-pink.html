@@ -334,6 +334,27 @@ body{background:var(--void)}
 .item-card.is-big h3{font-size:clamp(18px,5vw,22px)}
 .item-card.is-price{grid-template-columns:1fr;justify-items:center;text-align:center;padding:20px 16px}
 .item-card.is-price .price{justify-content:center}
+
+/* ── クーポン券・金の帯・第1弾 ─────── */
+:root{--g-gold:linear-gradient(115deg,#b9840f 0%,#e8b22e 22%,#ffe58f 46%,#f0c246 58%,#c48d14 82%,#e8b22e 100%)}
+.deal-limit{background:#e8b22e;background-image:var(--g-gold);color:#1b120b}
+.coupon-box{position:relative;margin:22px auto 0;max-width:560px;padding:20px 18px 26px;border:2px solid var(--vc);border-radius:12px;background:rgba(255,169,173,.07)}
+.coupon-box::before{content:"";position:absolute;inset:7px;border:1px dashed rgba(255,169,173,.6);border-radius:7px;pointer-events:none}
+.coupon-box::after{content:"";position:absolute;left:-14px;right:-14px;top:50%;height:26px;margin-top:-13px;pointer-events:none;
+  background:radial-gradient(circle at 0 50%,var(--void) 12px,transparent 13px) left/26px 26px no-repeat,radial-gradient(circle at 100% 50%,var(--void) 12px,transparent 13px) right/26px 26px no-repeat}
+.cp-lb{display:flex;justify-content:center;align-items:baseline;gap:10px;margin:0;font-size:clamp(20px,5.6vw,28px);font-weight:500;letter-spacing:.12em;color:#fff}
+.cp-lb span{font:700 clamp(15px,4vw,20px)/1 var(--num);letter-spacing:.2em;color:var(--vc)}
+.coupon-box .deal-big{margin-top:10px}
+.coupon-box .deal-big.is-wide .deal-num{font-size:min(19vw,130px)}
+.coupon-box .deal-big.is-wide .deal-unit{font-size:clamp(22px,6.2vw,44px)}
+.s1{margin-top:14px;padding-top:14px;border-top:1px solid #ecd9df}
+.s1-lb{display:inline-block;margin:0;padding:2px 12px;background:#17090f;color:#fff;font-size:clamp(14px,3.8vw,16px);letter-spacing:.1em}
+.s1-date{margin:10px 0 0;font-size:clamp(14px,3.9vw,17px);letter-spacing:.04em;white-space:nowrap}
+.s1-date b{font:700 clamp(24px,6.8vw,34px)/1 var(--num)}
+.s1-big{display:flex;align-items:baseline;gap:4px;margin:8px 0 0;color:var(--red);line-height:1;white-space:nowrap}
+.s1-big span{font-size:clamp(20px,5.6vw,28px);font-weight:500;margin-right:4px}
+.s1-big b{font:700 min(26vw,150px)/.9 var(--num);letter-spacing:-.01em}
+.s1-big em{font-style:normal;font-size:clamp(30px,8.4vw,48px);font-weight:500}
 </style>
 </head>
 <body>
@@ -402,9 +423,11 @@ body{background:var(--void)}
     <div>
       <h3>生VC美白<sup>※1</sup>美容液<sup>＊</sup></h3>
       <p class="spec">1ml×28包</p>
-      <p class="price"><b>3,960</b><span>円</span><small>(税込)</small></p>
-      <p class="price-cp">第3弾 クーポン利用で</p>
-      <p class="price is-red"><b>3,168</b><span>円</span><small>(税込)</small></p>
+      <div class="s1">
+        <p class="s1-lb">第1弾</p>
+        <p class="s1-date"><b>11/19</b>(木) 10:00 〜 <b>11/20</b>(金) 9:59</p>
+        <p class="s1-big"><span>ポイント</span><b>20</b><em>倍</em></p>
+      </div>
     </div>
   </a>
 
@@ -420,15 +443,16 @@ body{background:var(--void)}
   <i class="rays" aria-hidden="true"></i>
   <h2 class="deal-title"><small>美顔器</small><b>Deep Boost</b><em>BLACK FRIDAY</em><span>スペシャルセット</span></h2>
   <p class="deal-date"><b>11/19</b><span>(木)</span><i>〜</i><b>11/24</b><span>(火)</span></p>
-  <p class="deal-limit">Deep Boost単品ページ限定</p>
   <div class="set-visual">
     <img class="set-dev" src="images/device.png" alt="美顔器 Deep Boost" width="362" height="1656" loading="lazy">
     <img class="set-box" src="images/vc-box-front.webp" alt="生VC美白美容液の箱" width="1089" height="516" loading="lazy">
   </div>
   <p class="set-cap">美顔器 Deep Boost ＋ 生VC美白<sup>※1</sup>美容液<sup>＊</sup>1箱</p>
   <p class="set-plus" aria-label="さらに">＋</p>
-  <p class="deal-head">クーポン</p>
-  <p class="deal-big is-wide"><span class="deal-num">7,809</span><span class="deal-unit">円OFF</span></p>
+  <div class="coupon-box">
+    <p class="cp-lb"><span>COUPON</span>クーポン</p>
+    <p class="deal-big is-wide"><span class="deal-num">7,809</span><span class="deal-unit">円OFF</span></p>
+  </div>
   <div class="item-card is-price">
     <div>
       <h3>美顔器 Deep Boost<br>BLACK FRIDAYスペシャルセット</h3>

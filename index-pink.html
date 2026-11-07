@@ -355,6 +355,12 @@ body{background:var(--void)}
 .s1-big span{font-size:clamp(20px,5.6vw,28px);font-weight:500;margin-right:4px}
 .s1-big b{font:700 min(26vw,150px)/.9 var(--num);letter-spacing:-.01em}
 .s1-big em{font-style:normal;font-size:clamp(30px,8.4vw,48px);font-weight:500}
+
+/* ── クーポン獲得ボタン ─────── */
+.btn-coupon{background:#e8b22e;background-image:var(--g-gold);color:#1b120b;font-weight:500;letter-spacing:.08em}
+.btn-coupon:hover{filter:brightness(1.06)}
+.btn.btn-coupon.is-wait{border:0;background:#e8b22e;background-image:var(--g-gold);color:#1b120b;opacity:1}
+.btn-line.is-wait{border:1px solid var(--neon);color:var(--neon);opacity:1}
 </style>
 </head>
 <body>
@@ -369,8 +375,8 @@ body{background:var(--void)}
 
   <svg class="sign" viewBox="0 0 800 330" role="img" aria-label="BLACK FRIDAY">
     <defs>
-      <text id="t-black" font-family="'Russo One',sans-serif" font-size="150" x="400" y="136" text-anchor="middle" textLength="610" lengthAdjust="spacingAndGlyphs" transform="skewX(-7) translate(16 0)">BLACK</text>
-      <text id="t-friday" font-family="'Russo One',sans-serif" font-size="150" x="400" y="300" text-anchor="middle" textLength="690" lengthAdjust="spacingAndGlyphs" transform="skewX(-7) translate(36 0)">FRIDAY</text>
+      <text id="t-black" font-family="'Jost',sans-serif" font-weight="700" font-size="158" x="400" y="140" text-anchor="middle" textLength="600" lengthAdjust="spacing">BLACK</text>
+      <text id="t-friday" font-family="'Jost',sans-serif" font-weight="700" font-size="158" x="400" y="302" text-anchor="middle" textLength="660" lengthAdjust="spacing">FRIDAY</text>
     </defs>
     <!-- 管の後ろの光 -->
     <g fill="none" stroke-linejoin="round">
@@ -378,11 +384,7 @@ body{background:var(--void)}
       <use class="halo-p lit-2" href="#t-friday" stroke="#ff2f83" stroke-width="20"/>
     </g>
     <!-- 黒い管 -->
-    <g fill="rgba(255,255,255,.28)" stroke="#17090f" stroke-width="8" stroke-linejoin="round">
-      <use href="#t-black"/><use href="#t-friday"/>
-    </g>
-    <!-- 管のつや -->
-    <g fill="none" stroke="#a8919c" stroke-width="1.5" stroke-linejoin="round">
+    <g fill="#17090f" stroke="#17090f" stroke-width="3" stroke-linejoin="round">
       <use href="#t-black"/><use href="#t-friday"/>
     </g>
   </svg>
@@ -433,14 +435,14 @@ body{background:var(--void)}
 
   <div class="main-cta">
     <a class="btn btn-main" href="https://item.rakuten.co.jp/yunth/10000000/"><span>生VC美白<sup>※1</sup>美容液<sup>＊</sup>の商品ページへ</span></a>
-    <a class="btn btn-line" data-link="vcCoupon" data-label="第3弾 クーポンを取得" href="#">第3弾 クーポンを取得</a>
+    <a class="btn btn-coupon" data-link="vcCoupon" href="#">第3弾 20%OFFクーポン獲得</a>
   </div>
   <p class="note">※1 メラニンの生成を抑え、しみ・そばかすを防ぐ<br>＊医薬部外品 薬用ホワイトエッセンスPVC α</p>
 </section>
 
 <!-- ▼ Deep Boost -->
 <section class="block deal" id="combo">
-  <i class="rays" aria-hidden="true"></i>
+  
   <h2 class="deal-title"><small>美顔器</small><b>Deep Boost</b><em>BLACK FRIDAY</em><span>スペシャルセット</span></h2>
   <p class="deal-date"><b>11/19</b><span>(木)</span><i>〜</i><b>11/24</b><span>(火)</span></p>
   <div class="set-visual">
@@ -463,7 +465,7 @@ body{background:var(--void)}
   </div>
   <div class="btns">
     <a class="btn btn-main" href="https://item.rakuten.co.jp/yunth/yth-260/">Deep Boostの商品ページへ</a>
-    <a class="btn btn-line" data-link="deepboostCoupon" href="#">7,809円OFFクーポンを取得</a>
+    <a class="btn btn-coupon" data-link="deepboostCoupon" href="#">7,809円OFFクーポン獲得</a>
   </div>
   <p class="note">※1 メラニンの生成を抑え、しみ・そばかすを防ぐ　＊医薬部外品 薬用ホワイトエッセンスPVC α</p>
 </section>
@@ -482,7 +484,7 @@ body{background:var(--void)}
 
 <!-- ▼ 店舗全体 -->
 <section class="block deal" id="all">
-  <i class="rays" aria-hidden="true"></i>
+  
   <p class="deal-notice">店舗全体キャンペーン</p>
   <p class="deal-date"><b>11/19</b><span>(木)</span><i>〜</i><b>11/26</b><span>(木)</span></p>
   <p class="deal-limit">店内全品が対象</p>
@@ -496,7 +498,7 @@ body{background:var(--void)}
 
 <!-- ▼ 新規購入者 -->
 <section class="block deal deal-2" id="new">
-  <i class="rays" aria-hidden="true"></i>
+  
   <p class="deal-notice">はじめてのお客さま</p>
   <p class="deal-limit">新規購入者限定 エントリーが2つ</p>
   <div class="entry2">
@@ -597,7 +599,7 @@ function renderSerums() {
           <p class="price is-red"><b>${yen(Math.round(s.price * 0.8))}</b><span>円〜</span><small>(税込)</small></p>
         </div>
       </a>
-      <a class="btn btn-line" data-link="${s.link}" href="#">クーポンを取得</a>
+      <a class="btn btn-coupon" data-link="${s.link}" href="#">20%OFFクーポン獲得</a>
     </div>`).join("");
 }
 
@@ -608,10 +610,10 @@ function applyLinks() {
       el.href = url;
       return;
     }
+    /* URL未設定の間は押せないだけで、見た目と文言はそのまま */
     el.classList.add("is-wait");
     el.setAttribute("aria-disabled", "true");
     el.tabIndex = -1;
-    el.textContent = el.dataset.link === "entry19" ? "エントリー準備中" : WAIT_TEXT;
   });
 }
 

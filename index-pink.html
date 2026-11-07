@@ -388,6 +388,8 @@ body{background:var(--void)}
 .fv .fv-pouch{left:19cqw;top:80cqw;width:29cqw}
 .fv-copy{top:98cqw}
 .deal-date b,.s1-date b{font-weight:500;letter-spacing:.03em}
+
+.rail-tag i{font-style:normal;font-size:17px;letter-spacing:.06em;margin-right:4px;color:#fff5f8}
 </style>
 </head>
 <body>
@@ -495,7 +497,6 @@ body{background:var(--void)}
 
   <div class="main-cta">
     <a class="btn btn-main" href="https://item.rakuten.co.jp/yunth/10000000/"><span>生VC美白<sup>※1</sup>美容液<sup>＊</sup>の商品ページへ</span></a>
-    <a class="btn btn-coupon" data-link="vcCoupon" href="#">第3弾 20%OFFクーポン獲得</a>
   </div>
   <p class="note">※1 メラニンの生成を抑え、しみ・そばかすを防ぐ<br>＊医薬部外品 薬用ホワイトエッセンスPVC α</p>
 </section>
@@ -732,7 +733,7 @@ function setupRails() {
   document.getElementById("railTag").innerHTML =
     `<small>${i >= 0 ? "開催中" : "11/19(木) 10:00 スタート"}</small>` +
     `<strong>生VC美白<sup>※1</sup>美容液<sup>＊</sup> 第${Math.max(i, 0) + 1}弾</strong>` +
-    `<span><b class="tube">${s.num}</b><em>${s.unit}</em></span>`;
+    `<span><i>${s.pre}</i><b class="tube">${s.num}</b><em>${s.unit}</em></span>`;
 
   const links = [...document.querySelectorAll("[data-nav]")];
   if (!("IntersectionObserver" in window)) return;

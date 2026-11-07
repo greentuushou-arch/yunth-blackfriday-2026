@@ -408,6 +408,9 @@ body{background:var(--void)}
 .s1-date b{font-size:clamp(26px,7.2vw,34px)}
 .s1-date i{font:500 clamp(20px,5.4vw,26px)/1 var(--num);font-style:normal;letter-spacing:.03em;margin-left:6px}
 .item-card.is-big .s1-big{justify-content:center;margin-top:10px}
+
+[hidden]{display:none!important}
+.main .item-card.is-big{margin-top:0}
 </style>
 </head>
 <body>
@@ -479,10 +482,11 @@ body{background:var(--void)}
 
 <!-- ▼ 主役: 生VC美白美容液 -->
 <section class="block main" id="vc">
-  <h2><span>生VC美白<sup>※1</sup>美容液<sup>＊</sup></span><br>日替わりキャンペーン</h2>
-  <p class="lead">期間ごとに内容が切り替わります。<br>タップして内容をご確認ください。</p>
+  <!-- 一時非表示: 見出し・説明・ゲーム機。戻すときは hidden を外す -->
+  <h2 hidden><span>生VC美白<sup>※1</sup>美容液<sup>＊</sup></span><br>日替わりキャンペーン</h2>
+  <p class="lead" hidden>期間ごとに内容が切り替わります。<br>タップして内容をご確認ください。</p>
 
-  <div class="console">
+  <div class="console" hidden>
     <div class="bezel">
       <div class="screen" id="screen">
         <div class="hud"><span>キャンペーン</span><span id="hudCount">1/3</span></div>

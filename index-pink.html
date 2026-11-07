@@ -361,6 +361,14 @@ body{background:var(--void)}
 .btn-coupon:hover{filter:brightness(1.06)}
 .btn.btn-coupon.is-wait{border:0;background:#e8b22e;background-image:var(--g-gold);color:#1b120b;opacity:1}
 .btn-line.is-wait{border:1px solid var(--neon);color:var(--neon);opacity:1}
+
+/* ── はじめてのお客さま: ピンク地 ─────── */
+.deal.is-pink{background:var(--vc);color:#17090f}
+.deal.is-pink .deal-notice{border-color:#17090f;color:#17090f}
+.deal.is-pink .deal-big{color:#17090f}
+.deal.is-pink .note{color:#3b2129}
+.deal.is-pink .btn-line,.deal.is-pink .btn-line.is-wait{border:1px solid #17090f;color:#17090f;background:transparent}
+.deal.is-pink .btn-line:not(.is-wait){background:#17090f;color:#fff}
 </style>
 </head>
 <body>
@@ -487,17 +495,17 @@ body{background:var(--void)}
   
   <p class="deal-notice">店舗全体キャンペーン</p>
   <p class="deal-date"><b>11/19</b><span>(木)</span><i>〜</i><b>11/26</b><span>(木)</span></p>
-  <p class="deal-limit">店内全品が対象</p>
+  <p class="deal-limit">対象商品</p>
   <p class="deal-head">ポイント</p>
   <p class="deal-big"><span class="deal-num">15</span><span class="deal-unit">倍</span></p>
   <div class="deal-sub">
-    <p class="deal-head">BIG DEAL ポイント還元</p>
+    <p class="deal-head">BIG DEAL対象商品<br>ポイント還元</p>
     <p class="deal-big is-sub"><span class="deal-num">20</span><span class="deal-unit">%還元</span></p>
   </div>
 </section>
 
 <!-- ▼ 新規購入者 -->
-<section class="block deal deal-2" id="new">
+<section class="block deal is-pink" id="new">
   
   <p class="deal-notice">はじめてのお客さま</p>
   <p class="deal-limit">新規購入者限定 エントリーが2つ</p>

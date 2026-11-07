@@ -390,6 +390,12 @@ body{background:var(--void)}
 .deal-date b,.s1-date b{font-weight:500;letter-spacing:.03em}
 
 .rail-tag i{font-style:normal;font-size:17px;letter-spacing:.06em;margin-right:4px;color:#fff5f8}
+
+/* ── 期間は時刻まで。開始と終了を2行で ─────── */
+.deal-date{flex-direction:column;align-items:center;gap:6px}
+.deal-date .dd{display:flex;align-items:baseline;gap:3px}
+.deal-date em{font:500 clamp(22px,6.4vw,40px)/1 var(--num);font-style:normal;letter-spacing:.03em;margin-left:8px}
+.deal-date i{margin:0 0 0 8px}
 </style>
 </head>
 <body>
@@ -505,7 +511,7 @@ body{background:var(--void)}
 <section class="block deal" id="combo">
   
   <h2 class="deal-title"><small>美顔器</small><b>Deep Boost</b></h2>
-  <p class="deal-date"><b>11/19</b><span>(木)</span><i>〜</i><b>11/24</b><span>(火)</span></p>
+  <p class="deal-date"><span class="dd"><b>11/19</b><span>(木)</span><em>10:00</em><i>〜</i></span><span class="dd"><b>11/24</b><span>(火)</span><em>23:59</em></span></p>
   <div class="set-visual">
     <img class="set-dev" src="images/device.png" alt="美顔器 Deep Boost" width="362" height="1656" loading="lazy">
     <img class="set-box" src="images/vc-box-front.webp" alt="生VC美白美容液の箱" width="1089" height="516" loading="lazy">
@@ -535,7 +541,7 @@ body{background:var(--void)}
 <section class="block deal deal-2" id="trio">
   <i class="rays" aria-hidden="true"></i>
   <p class="deal-notice">美容液3種</p>
-  <p class="deal-date"><b>11/19</b><span>(木)</span><i>〜</i><b>11/25</b><span>(水)</span></p>
+  <p class="deal-date"><span class="dd"><b>11/19</b><span>(木)</span><em>10:00</em><i>〜</i></span><span class="dd"><b>11/25</b><span>(水)</span><em>23:59</em></span></p>
   <p class="deal-limit">3種すべて対象</p>
   <p class="deal-big"><span class="deal-num">20</span><span class="deal-unit">%OFF</span></p>
   <p class="deal-head">クーポン</p>
@@ -547,12 +553,12 @@ body{background:var(--void)}
 <section class="block deal" id="all">
   
   <p class="deal-notice">店舗全体キャンペーン</p>
-  <p class="deal-date"><b>11/19</b><span>(木)</span><i>〜</i><b>11/26</b><span>(木)</span></p>
+  <p class="deal-date"><span class="dd"><b>11/19</b><span>(木)</span><em>10:00</em><i>〜</i></span><span class="dd"><b>11/26</b><span>(木)</span><em>9:59</em></span></p>
   <p class="deal-limit">対象商品</p>
   <p class="deal-head">ポイント</p>
   <p class="deal-big"><span class="deal-num">15</span><span class="deal-unit">倍</span></p>
   <div class="deal-sub">
-    <p class="deal-head">BIG DEAL対象商品<br>ポイント還元</p>
+    <p class="deal-head">BIG DEAL対象商品<br>ポイント</p>
     <p class="deal-big is-sub"><span class="deal-num">20</span><span class="deal-unit">%還元</span></p>
   </div>
 </section>
